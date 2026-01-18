@@ -1,9 +1,10 @@
 /* Page background */
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-y: auto;  /* allow vertical scrolling */
   background: pink;
 }
+
 
 /* Container */
 .snowflakes {
