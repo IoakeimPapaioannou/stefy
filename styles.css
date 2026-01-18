@@ -1,0 +1,178 @@
+/* Page background */
+body {
+  margin: 0;
+  overflow: hidden;
+  background: pink;
+}
+
+/* Container */
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Heart (snowflake) */
+.snowflake {
+  position: fixed;
+  top: -10%;
+  user-select: none;
+  cursor: default;
+
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+
+/* Falling animation */
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+/* Side-to-side motion */
+@keyframes snowflakes-shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* Initial hearts positioning */
+.snowflake:nth-of-type(1) { left: 5%; animation-delay: 0s, 0s; }
+.snowflake:nth-of-type(2) { left: 15%; animation-delay: 1s, 1s; }
+.snowflake:nth-of-type(3) { left: 25%; animation-delay: 2s, 0.5s; }
+.snowflake:nth-of-type(4) { left: 35%; animation-delay: 3s, 2s; }
+.snowflake:nth-of-type(5) { left: 45%; animation-delay: 4s, 1s; }
+.snowflake:nth-of-type(6) { left: 55%; animation-delay: 5s, 2s; }
+.snowflake:nth-of-type(7) { left: 65%; animation-delay: 2.5s, 1s; }
+.snowflake:nth-of-type(8) { left: 75%; animation-delay: 1.5s, 0.5s; }
+.snowflake:nth-of-type(9) { left: 85%; animation-delay: 3s, 1.5s; }
+.snowflake:nth-of-type(10){ left: 95%; animation-delay: 0.5s, 0s; }
+
+/* Heart image */
+.snowflake img {
+  width: 25px;
+  height: auto;
+  opacity: 0.9;
+}
+/* Center container */
+.container {
+  position: relative;
+  max-width: 420px;
+  margin: 120px auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.35);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 2s ease;
+}
+
+/* Title */
+.container h1 {
+  font-family: 'Comic Sans MS', 'Poppins', cursive;
+  color: #ff4d88;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.container p {
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Image */
+.responsive-image {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+  transition: transform 0.4s ease;
+}
+
+/* Cute hover */
+.responsive-image:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/* Slideshow container */
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* Slides */
+.slide {
+  width: 100%;
+  border-radius: 20px;
+  display: none;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+}
+
+.slide.active {
+  display: block;
+  animation: fadeSlide 0.6s ease;
+}
+
+/* Buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 105, 180, 0.9);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide-btn:hover {
+  background: #ff4d88;
+}
+
+.prev { left: -18px; }
+.next { right: -18px; }
+
+/* Fade animation */
+@keyframes fadeSlide {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
