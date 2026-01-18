@@ -175,4 +175,27 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+#countdown {
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #ff4d88;
+  text-align: center;
+}
+
+#countdown h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+#countdown p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d88    ;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px 15px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
 
